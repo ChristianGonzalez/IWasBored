@@ -1,0 +1,28 @@
+import java.util.*;
+import java.io.*;
+public class reverseStrin {
+
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		
+		Scanner scn = new Scanner (new File("rev.dat"));  //gets the file I made
+		int iter = scn.nextInt();		//how many times it will go through the cycle 
+		scn.nextLine();				//now the scanner goes to the next line (this annoys me a little)
+		for(int a=0; a<iter;a++){	
+			String rev ="";
+			String ary[] = scn.nextLine().split("//s");		//make the words individual elements
+			
+			for(int b=ary.length-1; b>=0;b--){
+				char word[] = ary[b].toCharArray();	//takes single element and chops it up
+				
+				for(int c=word.length-1; c>=0;c--){
+					
+					rev+=word[c];	//makes it backwards
+				}
+				
+				System.out.println(rev); //prints
+			}
+		}
+	}
+
+}
